@@ -1,0 +1,182 @@
+html, body{
+    height: 99%;
+    background-color: #E6E6E6 !important;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../img/forecast.jpg");"
+}
+
+form, input {
+	font-size: 18pt;
+	padding: 10px;
+    font-weight: bold;
+}
+
+body, table, a {
+	color: #fff;
+	text-decoration: none;
+}
+
+body, table, tr {
+	border-top: 4px solid black;
+}
+	
+.corpo {
+	background-color: #000;
+	opacity: 70%;
+	color: #fff;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.titulo-pagina {
+	color: rgba(54, 162, 235, 1);
+	font-size: 30pt;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.card {
+	font-size: 20pt;
+}
+
+.titulo {
+	font-size: 20pt;
+	width: 100%;
+	padding: 10px;
+	background-color: yellow;
+	background-image: linear-gradient(to right, rgba(0,0,0,0.9), rgba(255,0,0,0));
+}
+
+.add-cidade {
+	padding-bottom: 50px;
+}
+
+.lista-cidades {
+	padding-bottom: 50px;
+	color: #fff;
+}
+
+.celula {
+	padding-right: 30px;
+	padding-bottom: 30px;
+}
+
+.botao {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: button;
+}
+
+.btn-excluir {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.btn-previsao {
+    background-color: #0080c0;
+    border-color: #0080c0;
+}
+
+.btn-add-cidade {
+	color: #fff;
+    background-color: #0080c0;
+    border-color: #0080c0;
+    line-height: 2.3;
+}
+
+.btn-voltar {
+    background-color: #0080c0;
+    border-color: #0080c0;
+}
+
+.msg-erro {
+	color: red;
+	position: absolute;
+}
+
+.dia {
+	font-size: 14pt;
+	font-weight: bold;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.umidade-img {
+	height: 60px;
+	vertical-align: middle;
+}
+
+.umidade-txt {
+	color: #0080c0;
+	font-size: 24pt;
+}
+
+.temperatura-img {
+	height: 60px;
+	vertical-align: middle;
+}
+
+.temperatura-txt {
+	color: #008000;
+	font-size: 30pt;
+}
+
+.temperatura-sensacao-txt {
+	color: #008080;
+	font-size: 16pt;
+	padding-left: 10px;
+}
+
+.temperatura-min-img {
+	height: 60px;
+	vertical-align: middle;
+}
+
+.temperatura-min-txt {
+	color: #0080ff;
+	font-size: 26pt;
+}
+
+.temperatura-max-img {
+	height: 60px;
+	vertical-align: middle;
+}
+
+.temperatura-max-txt {
+	color: #ff0000;
+	font-size: 26pt;
+}
+
+.entre-linhas {
+	padding-bottom: 50px;
+}
+
+.data-hora {
+	font-size: 20pt;
+}
+
+.icone {
+	height: 100px;
+}
