@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Tell the browser to be responsive to screen width -->
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+<meta http-equiv="X-UA-Compatible" content="IE=11">
+<link rel="stylesheet" href="/css/default.css" type="text/css">
+<title>Weather Forecast</title>
+</head>
+<body>
+
+	<div class="corpo">
+
+		<div class="titulo-pagina">Previsão do Tempo para as Cidades</div>
+
+		<div class="card">
+			<div class="add-cidade">
+
+				<div class="titulo">Cadastro de Cidade</div>
+
+				<form action="#" th:action="@{/}" th:object="${city}" method="post">
+					<input type="text" placeholder="Informe a cidade"
+						th:field="*{nome}" /> <input type="submit"
+						class="botao btn-add-cidade" value="Adicionar" />
+				</form>
+
+				<strong th:if="${error} != '' " th:text="${error}" class="msg-erro"></strong>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="lista-cidades">
+
+				<div class="titulo">Cidades Cadastradas</div>
+				<p></p>
+
+				<span th:if="${#arrays.isEmpty(cities)}">Não há nenhuma
+					cidade cadastrada</span>
+				<table th:if="${#arrays.isEmpty(cities)} == false">
+					<tbody>
+						<tr th:each="city : ${cities}">
+							<td class="celula" th:utext="${city.nome}"></td>
+							<td class="celula"><a
+								th:href="@{/forecast(cityName=${city.nome})}"
+								class="botao btn-previsao">Ver previsão do tempo</a></td>
+							<td class="celula"><a
+								th:href="@{/delete_city(cityId=${city.id})}"
+								class="botao btn-excluir">Excluir</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

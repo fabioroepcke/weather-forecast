@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Tell the browser to be responsive to screen width -->
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+<meta http-equiv="X-UA-Compatible" content="IE=11">
+<link rel="stylesheet" href="/css/default.css" type="text/css">
+<title>Weather Forecast</title>
+</head>
+<body>
+
+	<div class="corpo">
+
+		<div class="titulo-pagina">
+			Previsão do Tempo para <span th:text="${forecast.city.name}"></span>
+		</div>
+
+		<div class="card">
+
+			<p>
+				<a th:href="@{/}" class="botao btn-voltar">Voltar</a>
+			</p>
+
+			<table>
+				<tbody>
+					<tr th:each="hourAfterHour : ${forecast.list}">
+
+						<table>
+							<tbody>
+								<tr>
+									<td class="dia data-hora" colspan="5"
+										th:utext="${hourAfterHour.dayOfWeek} + ', ' + ${hourAfterHour.dateTimeFormatted} + ' - ' + ${hourAfterHour.weather[0].description}"></td>
+								</tr>
+								<tr>
+									<td class="dia"><img class="icone"
+										th:src="@{${hourAfterHour.imageUrl}}" /></td>
+									<td class="dia"><span class="temperatura-txt"
+										th:utext="${#numbers.formatDecimal(hourAfterHour.main.temp, 0, 'COMMA', 0, 'POINT')}"></span><img
+										class="temperatura-img" th:src="@{/img/temperatura.png}" /><span
+										class="temperatura-sensacao-txt"
+										th:utext="'Sensação ' + ${#numbers.formatDecimal(hourAfterHour.main.feels_like, 0, 'COMMA', 0, 'POINT')} + 'ºC'"></span></td>
+									<td class="dia"><span class="temperatura-min-txt"
+										th:utext="${#numbers.formatDecimal(hourAfterHour.main.temp_min, 0, 'COMMA', 0, 'POINT')} + 'ºC'"></span><img
+										class="temperatura-min-img"
+										th:src="@{/img/temperatura-min.png}" /></td>
+									<td class="dia"><span class="temperatura-max-txt"
+										th:utext="${#numbers.formatDecimal(hourAfterHour.main.temp_max, 0, 'COMMA', 0, 'POINT')} + 'ºC'"></span><img
+										class="temperatura-max-img"
+										th:src="@{/img/temperatura-max.png}" /></td>
+									<td class="dia"><span class="umidade-txt"
+										th:utext="${hourAfterHour.main.humidity}"></span><img
+										class="umidade-img" th:src="@{/img/umidade.png}" /></td>
+								</tr>
+								<tr>
+									<td class="entre-linhas" colspan="5"></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</tr>
+				</tbody>
+			</table>
+
+			<p>
+				<a th:href="@{/}" class="botao btn-voltar">Voltar</a>
+			</p>
+
+		</div>
+	</div>
+
+</body>
+</html>
