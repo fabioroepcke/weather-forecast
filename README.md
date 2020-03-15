@@ -67,6 +67,8 @@ Para acessar, na URL do navegador utilize o endereço: **http://localhost:8080/*
 
 ##### Executar fora do Eclipse
 
-Basta copiar o arquivo "weatherforecast-0.0.1-SNAPSHOT.jar" que está na pasta "target" para o local desejado e executar o seguinte comando: **java -jar weatherforecast-0.0.1-SNAPSHOT.jar**
+Execute o comando para geração do JAR, "Maven build...", preencha o Goals com "clean package".
+
+Basta copiar o arquivo "weatherforecast-0.0.1-SNAPSHOT.jar" que estará na pasta "target" para o local desejado e executar o seguinte comando: **java -jar weatherforecast-0.0.1-SNAPSHOT.jar**
 
 Para acessar, na URL do navegador utilize o endereço: **http://localhost:8080/**
